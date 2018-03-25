@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>340AB2992DC0E6A35E09E22B1ADF8A43A13CA5D539778A96871AD481F3ACA24B</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>2323D65BAC35A24CAEA8D30BA09647C86DEFA34B2F6A4FA13731402F8ED9B9A1</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>ac4787a7-8132-40d3-9b5d-d0b2ed29ed24_1.0.0.0_x86__dxdrmf0avrkt2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>ac4787a7-8132-40d3-9b5d-d0b2ed29ed24_dxdrmf0avrkt2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>ac4787a7-8132-40d3-9b5d-d0b2ed29ed24</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-12T03:41:09.934</Modified>
+      <Modified>2018-03-25T20:08:41.348</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\OnTop.exe">
       <PackagePath>entrypoint\OnTop.exe</PackagePath>
-      <Modified>2018-03-12T03:41:09.671</Modified>
+      <Modified>2018-03-25T20:08:41.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -535,7 +535,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\OnTop.xr.xml">
       <PackagePath>OnTop.xr.xml</PackagePath>
-      <Modified>2018-03-12T03:33:16.097</Modified>
+      <Modified>2018-03-25T19:55:10.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -544,11 +544,11 @@
     <AppxPackagedFile Include="C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-12T03:33:21.349</Modified>
+      <Modified>2018-03-25T19:55:10.965</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\excel\source\repos\OnTop\OnTop\bin\x86\Debug\Core\OnTop.exe">
       <PackagePath>OnTop.exe</PackagePath>
-      <Modified>2018-03-12T03:41:09.930</Modified>
+      <Modified>2018-03-25T20:08:41.342</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

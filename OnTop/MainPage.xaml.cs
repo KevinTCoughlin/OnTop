@@ -1,31 +1,40 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace OnTop
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
+        readonly int CustomOverlayHeight = 500;
+        readonly int CustomOverlayWidth = 500;
+        readonly bool UseCustomSize = true;
+        readonly string URL = "https://www.youtube.com/";
+
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            bool isSupported = ApplicationView.GetForCurrentView().IsViewModeSupported(ApplicationViewMode.CompactOverlay);
-            Debug.WriteLine("Is supported: " + isSupported);
+            var isSupported = ApplicationView.GetForCurrentView().IsViewModeSupported(ApplicationViewMode.CompactOverlay);
+            if (isSupported)
+                SetViewModeAsync();
 
-            SetViewModeAsync();
+            WebView1.Navigate(new Uri(URL));
         }
 
-        private async System.Threading.Tasks.Task SetViewModeAsync()
+        private async Task SetViewModeAsync()
         {
-            bool modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
-            Debug.WriteLine("Mode switched: " + modeSwitched);
+            if (UseCustomSize)
+            {
+                var compactOptions = ViewModePreferences.CreateDefault(ApplicationViewMode.CompactOverlay);
+                compactOptions.CustomSize = new Windows.Foundation.Size(CustomOverlayHeight, CustomOverlayWidth);
+                var modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default, compactOptions);
+            }
+            else
+            {
+                var modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
+            }
         }
     }
 }

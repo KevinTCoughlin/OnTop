@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 
 namespace OnTop
 {
@@ -10,7 +12,6 @@ namespace OnTop
         readonly int CustomOverlayHeight = 500;
         readonly int CustomOverlayWidth = 500;
         readonly bool UseCustomSize = true;
-        readonly string URL = "https://www.youtube.com/";
 
         public MainPage()
         {
@@ -18,9 +19,27 @@ namespace OnTop
 
             var isSupported = ApplicationView.GetForCurrentView().IsViewModeSupported(ApplicationViewMode.CompactOverlay);
             if (isSupported)
+            {
                 SetViewModeAsync();
+            }
+        }
 
-            WebView1.Navigate(new Uri(URL));
+        private void OnKeyDownHandler(object sender, KeyRoutedEventArgs e)
+        {
+            NavigateToUrl(UrlInput.Text);
+        }
+
+        private void NavigateToUrl(string urlStr)
+        {
+            try
+            {
+                var uri = new Uri(urlStr);
+                WebView1.Navigate(uri);
+            }
+            catch (FormatException e)
+            {
+                Debug.WriteLine(String.Format("URL is invalid, try again.  Details --> {0}", e.Message));
+            }
         }
 
         private async Task SetViewModeAsync()
